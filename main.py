@@ -20,3 +20,13 @@ croped_rgb=cv2.cvtColor(cropped_image,cv2.COLOR_BGR2RGB)
 plt.imshow(cropped_image)
 plt.title("THE CROPED IMAGE")
 plt.show()
+#
+#rotating image by 45 degrees
+(h,w)=image1.shape[:2]
+center=(w//2,h//2)
+M=cv2.getRotationMatrix2D(center,45,1)
+rotated = cv2.warpAffine(image1, M, (w, h))
+rotated_rgb=cv2.cvtColor(rotated,cv2.COLOR_BGR2RGB)
+plt.imshow(rotated_rgb)
+plt.title("ROTATED IMAGE")
+plt.show()
